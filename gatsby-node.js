@@ -26,6 +26,7 @@ exports.createPages = ({ actions, graphql }) => {
       }
 
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        console.log("NODE", node);
         createPage({
           path: node.frontmatter.path,
           component: gigTemplate,

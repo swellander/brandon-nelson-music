@@ -11,7 +11,7 @@ collections:
     folder: gigs
     create: true
     fields:
-      - { name: title, label: Title }
+      - { name: path, label: Path }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: address, label: Address }

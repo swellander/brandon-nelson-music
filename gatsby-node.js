@@ -5,6 +5,16 @@ exports.createPages = ({ actions, graphql }) => {
 
   const gigTemplate = path.resolve(`src/templates/gig.js`)
 
+  //sourced from https://gist.github.com/mathewbyrne/1280286
+  const slugify = text => (
+    text.toString().toLowerCase()
+      .replace(/\s+/g, '-')           // Replace spaces with -
+      .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+      .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+      .replace(/^-+/, '')             // Trim - from start of text
+      .replace(/-+$/, '')             // Trim - from end of text
+  )
+
   return graphql(`
     {
       allMarkdownRemark(
@@ -14,7 +24,7 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             frontmatter {
-              path
+              title
             }
           }
         }
@@ -28,7 +38,7 @@ exports.createPages = ({ actions, graphql }) => {
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         console.log("NODE", node);
         createPage({
-          path: node.frontmatter.path,
+          path: `/${slugify(node.frontmatter.title)}`,
           component: gigTemplate,
           context: {}, // additional data can be passed via context
         })

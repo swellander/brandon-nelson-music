@@ -1,5 +1,6 @@
 import React, { Fragment } from "react"
 import { withStyles, Paper, Grid, Typography, Button } from '@material-ui/core';
+import { Link } from 'gatsby';
 import moment from 'moment'
 
 const styles = {
@@ -7,7 +8,7 @@ const styles = {
     float: 'right'
   },
   dateSquareContainer: {
-    height: '100%',
+    marginRight: 30
   },
   dateSquare: {
     height: 80,
@@ -15,9 +16,14 @@ const styles = {
     backgroundColor: 'black',
     borderRadius: 4,
     color: 'white',
-    margin: 0
+    margin: 0,
+  },
+  bodyContainer: {
+    paddingBottom: 70
+  },
+  btn: {
+    marginTop: 20
   }
-
 }
 
 const Gig = ({ classes, gig }) => {
@@ -25,17 +31,17 @@ const Gig = ({ classes, gig }) => {
   console.log(formattedDate)
   return (
     <Grid xs={12} container wrap="wrap">
-      <Grid item xs={2} justify="flex-end">
+      <Grid item xs={1} justify="flex-end" className={classes.dateSquareContainer}>
         <Paper className={classes.dateSquare}>
-          <Grid justify="center" alignItems="center" container className={classes.dateSquareContainer}>
+          <Grid justify="center" alignItems="center" container style={{ height: '100%' }}>
             <Typography variant="subheading" style={{ color: "white", textAlign: 'center' }}>
               {formattedDate}
             </Typography>
           </Grid>
         </Paper>
       </Grid>
-      <Grid item xs={4}>
-        <Typography variant="display3">
+      <Grid item xs={8} className={classes.bodyContainer}>
+        <Typography variant="display1">
           {gig.title}
         </Typography>
         <Typography>
@@ -44,7 +50,12 @@ const Gig = ({ classes, gig }) => {
         <Typography>
           {gig.address}
         </Typography>
-        <Button variant="contained">More Detail</Button>
+        <Button
+          to={gig.path}
+          component={Link}
+          className={classes.btn}
+          variant="contained"
+        >More Detail</Button>
       </Grid>
     </Grid>
   )

@@ -11,10 +11,11 @@ collections:
     folder: gigs
     create: true
     fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
+      - { name: venue, label: Venue }
       - { name: address, label: Address }
-      - { name: link, label: Event Link }
+      - { name: date, label: Date - Start Time, widget: datetime }
       - { name: description, label: Description, widget: markdown }
+      - { name: link, label: Event Link }
+      - { name: path, label: Path }
       

@@ -1,6 +1,6 @@
 import React from "react"
-import Splash from '../components/Splash';
-import GigList from '../components/GigList';
+import Splash from '../components/Splash.js';
+import GigList from '../components/GigList.js';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import '../layout/global.css';
 

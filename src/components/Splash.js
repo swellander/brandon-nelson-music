@@ -1,6 +1,7 @@
 import React from "react"
 import { Parallax } from 'react-scroll-parallax';
 import { withStyles, Typography } from '@material-ui/core';
+import splashImg from './splash.jpg';
 
 const styles = {
   container: {
@@ -15,7 +16,7 @@ const styles = {
     height: '150vh', // this should be dynamic, right now it's fixed based on a min max offset
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    backgroundImage: `url("/assets/splash.jpg")`
+    backgroundImage: `url(${splashImg})`
   },
   titleContainer: {
     position: 'absolute',

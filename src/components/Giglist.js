@@ -14,7 +14,7 @@ const styles = {
   }
 }
 
-const GigList = ({ classes, edges }) => {
+const Giglist = ({ classes, edges }) => {
   return (
     <div className={classes.container}>
       <h3>Tour Dates</h3>
@@ -35,4 +35,4 @@ const GigList = ({ classes, edges }) => {
   )
 }
 
-export default withStyles(styles)(GigList);
+export default withStyles(styles)(Giglist);

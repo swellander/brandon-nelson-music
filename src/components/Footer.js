@@ -7,7 +7,7 @@ import moment from "moment"
 
 const styles = {
   container: {
-    height: '200px',
+    height: 100,
     width: '100vw',
     backgroundColor: '#1f1f1f',
   },
@@ -15,12 +15,12 @@ const styles = {
     textAlign: 'center'
   },
   icon: {
-    fontSize: '1em'
+    fontSize: 5
   },
   copyRight: {
     color: 'white',
     textAlign: 'center',
-    marginTop: -40
+    marginTop: -20
   }
 };
 
@@ -28,17 +28,17 @@ const Footer = ({ classes, splash }) => (
   <Grid className={classes.container} container justify="center" alignItems="center">
     <Grid container item xs={12} justify="center" className={classes.innnerContainer}>
       <IconButton className={classes.iconBtn}>
-        <SocialIcon url='https://www.facebook.com/Brandon.Loves.Pie' className={classes.icon} color="white" />
+        <SocialIcon url='https://www.facebook.com/Brandon.Loves.Pie' style={{ height: 30, width: 30 }} color="white" />
       </IconButton>
       <IconButton>
-        <SocialIcon url='https://soundcloud.com/brandon-nelson-75' className={classes.icon} color="white" />
+        <SocialIcon url='https://soundcloud.com/brandon-nelson-75' style={{ height: 30, width: 30 }} color="white" />
       </IconButton>
       <IconButton>
-        <SocialIcon url='https://www.instagram.com/' className={classes.icon} color="white" />
+        <SocialIcon url='https://www.instagram.com/' style={{ height: 30, width: 30 }} color="white" />
       </IconButton>
     </Grid>
     <Grid item xs={12}>
-      <Typography className={classes.copyRight}>©{moment(Date.now()).format('YYYY')} by Brandon Nelson</Typography>
+      <Typography variant="caption" className={classes.copyRight}>©{moment(Date.now()).format('YYYY')} by Brandon Nelson</Typography>
     </Grid>
   </Grid>
 )

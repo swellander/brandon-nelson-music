@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import moment from 'moment'
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -20,7 +21,8 @@ export const pageQuery = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date
+        venue
         path
         title
       }

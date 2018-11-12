@@ -28,7 +28,7 @@ const styles = {
 
 const Gig = ({ classes, gig }) => {
   const formattedDate = moment(gig.date).format("MMM D")
-  console.log(formattedDate)
+  const time = moment(gig.date).format("h:mma")
   return (
     <Grid xs={12} container wrap="wrap">
       <Grid item xs={1} justify="flex-end" className={classes.dateSquareContainer}>
@@ -45,10 +45,10 @@ const Gig = ({ classes, gig }) => {
           {gig.title}
         </Typography>
         <Typography>
-          {gig.date}
+          {gig.venue}
         </Typography>
         <Typography>
-          {gig.address}
+          {time}
         </Typography>
         <Button
           to={gig.path}

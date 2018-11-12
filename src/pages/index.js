@@ -20,7 +20,7 @@ export const query = graphql`
       edges {
         node {
           frontmatter {
-            title path date address link description
+            title path date address link description venue
           }
         }
       }

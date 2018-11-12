@@ -1,6 +1,7 @@
 import React from 'react';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import { withStyles, Grid, Typography } from '@material-ui/core';
+import SoundCloud from './SoundCloud';
 
 const styles = {
   container: {
@@ -28,12 +29,13 @@ const Music = ({ classes }) => {
         xs={12}
         className={classes.titleContainer}
       >
-        <Typography
+        {/* <Typography
           variant="display2"
           className={classes.title}
         >
           MUSIC
-      </Typography>
+      </Typography> */}
+        <SoundCloud />
       </Grid>
     </Grid>
 

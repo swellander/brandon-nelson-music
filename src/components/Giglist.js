@@ -19,7 +19,7 @@ const styles = {
 const Giglist = ({ classes, edges }) => {
   return (
     <Fragment>
-      <ParallaxDivider image={performancesImg} />
+      <ParallaxDivider image={performancesImg} title="Performances" />
       <div className={classes.container}>
         <h3>Tour Dates</h3>
         < Grid container justify="center" >

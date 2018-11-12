@@ -1,14 +1,20 @@
 import React from "react"
 import { ParallaxBanner } from 'react-scroll-parallax';
-import { withStyles, Typography } from '@material-ui/core';
+import { withStyles, Typography, Grid } from '@material-ui/core';
 
 const styles = {
-  // banner: {
-  //   height: '100vh'
-  // }
+  container: {
+    position: 'relative',
+    textAlign: 'center',
+  },
+  title: {
+    marginTop: '48vh',
+    color: 'white',
+    letterSpacing: 4,
+  }
 }
 
-const ParallaxDivider = ({ classes, image }) => (
+const ParallaxDivider = ({ classes, image, title }) => (
 
   <ParallaxBanner
     className={classes.banner}
@@ -23,7 +29,19 @@ const ParallaxDivider = ({ classes, image }) => (
       height: '100vh',
     }}
   >
-    <Typography variant="display1" className={classes.title}>BRANDON NELSON</Typography>
+    <Grid
+      container
+      justify="center"
+      alignItems="center"
+    >
+      <Grid
+        item
+        xs={12}
+        className={classes.container}
+      >
+        <Typography variant="display1" className={classes.title}>{title.toUpperCase()}</Typography>
+      </Grid>
+    </Grid>
   </ParallaxBanner>
   // <div className={classes.titleContainer}>
   // </div>

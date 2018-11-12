@@ -3,6 +3,8 @@ import Gig from './Gig'
 import { withStyles, Grid, } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
 import { Link } from 'gatsby'
+import ParallaxDivider from "./ParallaxDivider";
+import performancesImg from './smile.jpg';
 
 
 const styles = {
@@ -16,22 +18,25 @@ const styles = {
 
 const Giglist = ({ classes, edges }) => {
   return (
-    <div className={classes.container}>
-      <h3>Tour Dates</h3>
-      < Grid container justify="center" >
-        <Grid item lg={9} xs={11} justify="center" container>
-          {edges.map((edge, i) => {
-            const { frontmatter } = edge.node;
-            return (
-              <Fragment>
-                <Gig key={frontmatter.id} gig={frontmatter} />
-                <Divider />
-              </Fragment>
-            )
-          })}
+    <Fragment>
+      <ParallaxDivider image={performancesImg} />
+      <div className={classes.container}>
+        <h3>Tour Dates</h3>
+        < Grid container justify="center" >
+          <Grid item lg={9} xs={11} justify="center" container>
+            {edges.map((edge, i) => {
+              const { frontmatter } = edge.node;
+              return (
+                <Fragment>
+                  <Gig key={frontmatter.id} gig={frontmatter} />
+                  <Divider />
+                </Fragment>
+              )
+            })}
+          </Grid>
         </Grid>
-      </Grid>
-    </div>
+      </div>
+    </Fragment >
   )
 }
 

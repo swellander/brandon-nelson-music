@@ -13,7 +13,7 @@ const styles = {
   dateSquare: {
     height: 80,
     width: 80,
-    backgroundColor: 'black',
+    backgroundColor: '#1f1f1f',
     borderRadius: 4,
     color: 'white',
     margin: 0,

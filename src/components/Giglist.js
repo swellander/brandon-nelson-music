@@ -6,10 +6,11 @@ import { Link } from 'gatsby'
 import ParallaxDivider from "./ParallaxDivider";
 import performancesImg from './smile.jpg';
 
-
 const styles = {
   container: {
-    height: '100vh'
+    height: '100%',
+    backgroundColor: 'white',
+    paddingTop: 30
   },
   link: {
     width: '100%',

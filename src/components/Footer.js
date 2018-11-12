@@ -3,6 +3,7 @@ import { Grid, Toolbar, IconButton, AppBar, Typography, withStyles } from '@mate
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'gatsby';
 import { SocialIcon } from 'react-social-icons';
+import moment from "moment"
 
 const styles = {
   container: {
@@ -16,6 +17,11 @@ const styles = {
   icon: {
     fontSize: '1em'
   },
+  copyRight: {
+    color: 'white',
+    textAlign: 'center',
+    marginTop: -40
+  }
 };
 
 const Footer = ({ classes, splash }) => (
@@ -30,6 +36,9 @@ const Footer = ({ classes, splash }) => (
       <IconButton>
         <SocialIcon url='https://www.instagram.com/' className={classes.icon} color="white" />
       </IconButton>
+    </Grid>
+    <Grid item xs={12}>
+      <Typography className={classes.copyRight}>©{moment(Date.now()).format('YYYY')} by Brandon Nelson</Typography>
     </Grid>
   </Grid>
 )

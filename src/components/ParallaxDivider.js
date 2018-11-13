@@ -8,7 +8,7 @@ const styles = {
     textAlign: 'center',
   },
   title: {
-    marginTop: '48vh',
+    marginTop: '32vh',
     color: 'white',
     letterSpacing: 4,
   }
@@ -26,7 +26,7 @@ const ParallaxDivider = ({ classes, image, title }) => (
       }
     ]}
     style={{
-      height: '100vh',
+      height: '70vh',
     }}
   >
     <Grid

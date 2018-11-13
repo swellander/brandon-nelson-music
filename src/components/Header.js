@@ -2,6 +2,7 @@ import React from "react"
 import { Toolbar, IconButton, AppBar, Typography, withStyles } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'gatsby';
+import HamMenu from './HamMenu';
 
 const styles = {
   root: {
@@ -51,6 +52,7 @@ const Header = ({ classes, splash }) => (
         <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
           <MenuIcon fontSize="large" />
         </IconButton>
+        {/* <HamMenu /> */}
       </Toolbar>
     </AppBar>
   </div>

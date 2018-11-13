@@ -34,7 +34,7 @@ const Footer = ({ classes, splash }) => (
         <SocialIcon url='https://soundcloud.com/brandon-nelson-75' style={{ height: 30, width: 30 }} color="white" />
       </IconButton>
       <IconButton>
-        <SocialIcon url='https://www.instagram.com/' style={{ height: 30, width: 30 }} color="white" />
+        <SocialIcon url='https://www.instagram.com/brandonnelsonmusic/' style={{ height: 30, width: 30 }} color="white" />
       </IconButton>
     </Grid>
     <Grid item xs={12}>

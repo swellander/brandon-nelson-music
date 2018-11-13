@@ -1,11 +1,11 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 import Header from '../components/Header';
-// import Map from '../components/Map';
 import { withStyles, Grid, Typography, Divider } from '@material-ui/core';
 import moment from "moment"
+import Map from '../components/Map';
 import Footer from "../components/Footer";
-// import Geocode from 'react-geocode'
+import Geocode from 'react-geocode'
 
 const styles = {
   container: {
@@ -24,21 +24,21 @@ const styles = {
 }
 
 class GigDetail extends Component {
-  // state = {
-  //   center: {}
-  // }
-  // componentDidMount() {
-  //   Geocode.setApiKey(process.env.GEO_KEY)
-  //   Geocode.fromAddress(this.props.data.markdownRemark.frontmatter.address).then(
-  //     response => {
-  //       const center = response.results[0].geometry.location;
-  //       this.setState({ center });
-  //     },
-  //     error => {
-  //       console.error(error);
-  //     }
-  //   );
-  // }
+  state = {
+    center: {}
+  }
+  componentDidMount() {
+    Geocode.setApiKey(process.env.GEO_KEY)
+    Geocode.fromAddress(this.props.data.markdownRemark.frontmatter.address).then(
+      response => {
+        const center = response.results[0].geometry.location;
+        this.setState({ center });
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
   render() {
     const { markdownRemark } = this.props.data // data.markdownRemark holds our post data
     const { frontmatter } = markdownRemark
@@ -71,7 +71,7 @@ class GigDetail extends Component {
 
             <Grid className={classes.map} item xs={12} lg={6}>
               {/* <Map test="test" center={this.state.center} /> */}
-              <h3>Map</h3>
+              <Map center={this.state.center} />
             </Grid>
           </Grid>
         </Grid>
